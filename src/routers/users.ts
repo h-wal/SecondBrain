@@ -86,6 +86,7 @@ userRouter.post("/signup", userExists, async (req: Request<{}, {}, SignupReqBody
     res.json({
         message: "You are signed up"
     })
+    return;
 })
 
 userRouter.post("/signin", signinAuth, async (req: AuthRequest ,res: Response<TokenRes>) => {
