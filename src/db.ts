@@ -22,6 +22,7 @@ const contentSchema = new Schema({
     title: String,
     content: String,
     tags: [{type: Schema.Types.ObjectId, ref: "tags"}],
+    date: String,
     user: {
         type: Schema.Types.ObjectId, 
         ref: "user"
