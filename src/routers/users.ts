@@ -100,7 +100,7 @@ userRouter.post("/signin", signinAuth, async (req: AuthRequest ,res: Response<To
 })
 
 userRouter.post("/content", authenticateUser, async( req: AuthRequest, res: Response, next: NextFunction) => {
-    const {title, content, link, tags} = req.body;
+    const {type, title, content, link, tags} = req.body;
     try{
         console.log(req.user?.id)
         const tagID = []
@@ -113,8 +113,10 @@ userRouter.post("/content", authenticateUser, async( req: AuthRequest, res: Resp
             tagID.push(tag._id)
         }
         const contentUpload =  await contentModel.create({
+            type: type,
             title: title,
             content: content,
+            links: link,
             tags: tagID,
             user: req.user?.id
         })

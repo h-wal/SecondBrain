@@ -18,6 +18,7 @@ const userSchema = new Schema({
 })
 
 const contentSchema = new Schema({
+    type: String,
     title: String,
     content: String,
     tags: [{type: Schema.Types.ObjectId, ref: "tags"}],
