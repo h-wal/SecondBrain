@@ -228,17 +228,3 @@ npm run dev
 Open `http://localhost:5173` in your browser.
 Backend runs on `http://localhost:3030`.
 
----
-
-## 🧠 System Architecture
-
-```mermaid
-graph TD
-A[Frontend (React + Vite)] -->|Axios| B[Backend (Express API)]
-B -->|Mongoose| C[(MongoDB Atlas)]
-B --> D[JWT Authentication]
-A --> E[LocalStorage (Stores JWT Token)]
-```
-
----
-
